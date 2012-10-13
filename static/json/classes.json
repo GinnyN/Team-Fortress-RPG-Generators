@@ -1,0 +1,398 @@
+{
+    "classes": {
+        "scout": {
+            "bonus": {
+                "defense": 20,
+                "attack": 0,
+                "turn": 20,
+                "hp": 5
+            },
+            "tables": [
+                {
+                    "name": "Scout Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Double Jump",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Athletics",
+                    "depends": "agility",
+                    "bonus": 30
+                },
+                {
+                    "name": "Jump",
+                    "depends": "strength",
+                    "bonus": 10
+                },
+                {
+                    "name": "Acrobatics",
+                    "depends": "agility",
+                    "bonus": 10
+                }
+            ]
+        },
+        "soldier": {
+            "bonus": {
+                "defense": 5,
+                "attack": 20,
+                "turn": 5,
+                "hp": 15
+            },
+            "tables": [
+                {
+                    "name": "Soldier Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Rocket Jump",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Resist Pain",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Occult",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "History",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "Athletics",
+                    "depends": "agility",
+                    "bonus": 10
+                },
+                {
+                    "name": "Intimidation",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Leadership",
+                    "depends": "power",
+                    "bonus": 10
+                }
+            ]
+        },
+        "pyro": {
+            "bonus": {
+                "defense": 15,
+                "attack": 10,
+                "turn": 10,
+                "hp": 10
+            },
+            "tables": [
+                {
+                    "name": "Pyro Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Special: Impervious to be Set on Fire",
+                    "type": "technique"
+                },
+                {
+                    "name": "Special: You have to talk in Mumbles",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Resist Pain",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Occult",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "History",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "Athletics",
+                    "depends": "agility",
+                    "bonus": 10
+                },
+                {
+                    "name": "Intimidation",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Leadership",
+                    "depends": "power",
+                    "bonus": 10
+                }
+            ]
+        },
+        "demoman": {
+            "bonus": {
+                "defense": 5,
+                "attack": 20,
+                "turn": 5,
+                "hp": 15
+            },
+            "tables": [
+                {
+                    "name": "Demoman Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Sticky Jump",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Resist Pain",
+                    "depends": "will",
+                    "bonus": 15
+                },
+                {
+                    "name": "Occult",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "Athletics",
+                    "depends": "agility",
+                    "bonus": 10
+                },
+                {
+                    "name": "Intimidation",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Dance",
+                    "depends": "agility",
+                    "bonus": 10
+                }
+            ]
+        },
+        "heavy": {
+            "bonus": {
+                "defense": 0,
+                "attack": 30,
+                "turn": 5,
+                "hp": 20
+            },
+            "tables": [
+                {
+                    "name": "Heavy Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Special: Add 6 to Strength",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Strength Feats",
+                    "depends": "strength",
+                    "bonus": 10
+                },
+                {
+                    "name": "Leadership",
+                    "depends": "power",
+                    "bonus": 15
+                },
+                {
+                    "name": "Resist Pain",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Intimidation",
+                    "depends": "will",
+                    "bonus": 10
+                },
+                {
+                    "name": "Medicine",
+                    "depends": "intelligence",
+                    "bonus": 5
+                }
+            ]
+        },
+        "engineer": {
+            "bonus": {
+                "defense": 15,
+                "attack": 10,
+                "turn": 5,
+                "hp": 10
+            },
+            "tables": [
+                {
+                    "name": "Engineer Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Upgrade Buildings",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Science",
+                    "depends": "intelligence",
+                    "bonus": 35
+                },
+                {
+                    "name": "Medicine",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "Music",
+                    "depends": "power",
+                    "bonus": 10
+                }
+            ]
+        },
+        "medic": {
+            "bonus": {
+                "defense": 15,
+                "attack": 5,
+                "turn": 15,
+                "hp": 10
+            },
+            "tables": [
+                {
+                    "name": "Medic Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Regeneration",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Science",
+                    "depends": "intelligence",
+                    "bonus": 15
+                },
+                {
+                    "name": "Medicine",
+                    "depends": "intelligence",
+                    "bonus": 30
+                },
+                {
+                    "name": "Music",
+                    "depends": "power",
+                    "bonus": 5
+                }
+            ]
+        },
+        "sniper": {
+            "bonus": {
+                "defense": 0,
+                "attack": 40,
+                "turn": 5,
+                "hp": 5
+            },
+            "tables": [
+                {
+                    "name": "Sniper Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Ability to produce Jarate",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Herbology",
+                    "depends": "intelligence",
+                    "bonus": 15
+                },
+                {
+                    "name": "Forge",
+                    "depends": "dexterity",
+                    "bonus": 5
+                },
+                {
+                    "name": "Track",
+                    "depends": "perception",
+                    "bonus": 5
+                },
+                {
+                    "name": "Search",
+                    "depends": "perception",
+                    "bonus": 10
+                },
+                {
+                    "name": "Notice",
+                    "depends": "perception",
+                    "bonus": 5
+                }
+            ]
+        },
+        "spy": {
+            "bonus": {
+                "defense": 0,
+                "attack": 40,
+                "turn": 5,
+                "hp": 5
+            },
+            "tables": [
+                {
+                    "name": "Spy Basic Table",
+                    "type": "table"
+                },
+                {
+                    "name": "Special: +30 to attacks from the Back",
+                    "type": "technique"
+                }
+            ],
+            "secondaries": [
+                {
+                    "name": "Herbology",
+                    "depends": "intelligence",
+                    "bonus": 5
+                },
+                {
+                    "name": "Forge",
+                    "depends": "dexterity",
+                    "bonus": 5
+                },
+                {
+                    "name": "Disguising",
+                    "depends": "dexterity",
+                    "bonus": 5
+                },
+                {
+                    "name": "Stealth",
+                    "depends": "agility",
+                    "bonus": 10
+                },
+                {
+                    "name": "Hiding",
+                    "depends": "perception",
+                    "bonus": 10
+                },
+                {
+                    "name": "Notice",
+                    "depends": "perception",
+                    "bonus": 5
+                }
+            ]
+        }
+    }
+}

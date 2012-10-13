@@ -1,0 +1,163 @@
+{
+    "misc": [
+        
+            {
+                "name":"Acrobatics",
+                "depends": "agility"
+            },
+        
+            {
+                "name":"Athletics",
+                "depends": "agility"
+            },
+      
+            {
+                "name":"Riding",
+                "depends": "agility"
+            },
+      
+            {
+                "name":"Swim",
+                "depends": "agility"
+            },
+     
+            {
+                "name":"Jump",
+                "depends": "strength"
+            },
+     
+            {
+                "name":"Style",
+                "depends": "power"
+            },
+        
+            {
+                "name":"Intimidation",
+                "depends": "will"
+            },
+     
+            {
+                "name":"Persuasion",
+                "depends": "inteligence"
+            },
+      
+            {
+                "name":"Notice",
+                "depends": "perception"
+            },
+     
+            {
+                "name":"Search",
+                "depends": "perception"
+            },
+
+            {
+                "name":"Track",
+                "depends": "perception"
+            },
+
+            {
+                "name":"Animal",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Science",
+                "depends": "inteligence"
+            },
+ 
+            {
+                "name":"Herbology",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"History",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Medicine",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Memorize",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Navigation",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Occult",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Valuation",
+                "depends": "inteligence"
+            },
+
+            {
+                "name":"Coldness",
+                "depends": "will"
+            },
+
+            {
+                "name":"Strength Feats",
+                "depends": "strength"
+            },
+ 
+            {
+                "name":"Resist Pain",
+                "depends": "will"
+            },
+
+            {
+                "name":"Locksmithing",
+                "depends": "dexterity"
+            },
+
+            {
+                "name":"Hiding",
+                "depends": "perception"
+            },
+            {
+                "name": "Stealth",
+                "depends":"agility"
+            },
+
+            {
+                "name": "Trap Disabling",
+                "depends": "dexterity"
+            },
+
+            {
+                "name": "Art",
+                "depends": "power"
+            },
+ 
+            {
+                "name":"Dance",
+                "depends": "agility"
+            },
+
+            {
+                "name": "Forge",
+                "depends": "dexterity"
+            },
+
+            {
+                "name": "Music",
+                "depends": "power"
+            },
+
+            {
+                "name": "Hand Tricks",
+                "depends": "dexterity"
+            }
+    ]
+}

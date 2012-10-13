@@ -1,0 +1,14 @@
+{% for sec in misc %}
+<tr class='{{ sec.dependency }}"'>
+	<td class="name">{{ sec.name }}:</td>
+	<td class='total'>
+			<span class='total'></span>
+			<span class='hidden base'>{{ sec.base }}</span>
+			<span class='hidden classBonus'>{{ sec.classBonus }}</span>
+	</td>
+	<td class='flechas'>
+		<div class='up ui-icon ui-icon-triangle-1-n'></div>
+		<div class='down ui-icon ui-icon-triangle-1-s'></div>
+	</td>
+</tr>
+{% endfor %}

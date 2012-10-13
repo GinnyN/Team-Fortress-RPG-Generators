@@ -1,0 +1,50 @@
+td
+{
+	padding: 0.1em;
+}
+
+.ui-icon-close{
+	float: right;
+}
+#primary-div
+{
+	float: left;
+	width: 20%;
+}
+#secondary-div
+{
+	float:left;
+	width:70%;
+}
+#levels-div
+{
+	float: left;
+	width: 10%;
+}
+.hidden
+{
+	display: none;
+}
+
+#fight-div
+{
+	float:left;
+	width:70%;
+}
+
+#misc-div
+{
+	float:left;
+	width:30%;
+}
+
+#tables-div
+{
+	float:left;
+	width:40%;
+}
+#weapons-div
+{
+	float:left;
+	width:60%;
+}

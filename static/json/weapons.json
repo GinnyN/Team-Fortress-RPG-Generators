@@ -1,0 +1,192 @@
+{
+    "weapons": {
+        "primary": {
+            "miniguns": {
+                "name": "Miniguns",
+                "weapons": [
+                    {
+                        "name": "Sasha/Iron Curtain",
+                        "type_of_damage": "Shell/Barrage",
+                        "damage_multiplier": 3,
+                        "damage_point_blank": 5.4,
+                        "damage_over_100": 3,
+                        "active_action_attack": "40 Bullets (A Barrage)",
+                        "full_turn_attack": "Clip Size (Max: 120 Bullets (3 Barrages))",
+                        "clip_size": "200 Bullets (5 Barrages)",
+                        "load_time": "2 Bullets per Action",
+                        "notes": "Deploy Time: 1 Active Action </br> Undeploy Time: 1 Active Action </br> Reduced Speed while Deployed: 1/2 of Movement </br> Reduced Defense while Deployed: 1/2 of Defense </br> Strength Needed: 10 (for been Fired)/ 8 (for been Carried Around) </br> Unable to Change Weapons while Deployed </br> Unable to Jump while Deployed"
+                    }
+                ]
+            },
+            "rocket_launchers": {
+                "name": "Rocket Launchers",
+                "weapons": [
+                    {
+                        "name": "Regular Rocket Launcher/Original",
+                        "type_of_damage": "Splash",
+                        "damage_multiplier": 0.9,
+                        "damage_point_blank": 0.9,
+                        "damage_over_100": 0.9,
+                        "active_action_attack": "1 Rocket",
+                        "full_turn_attack": "Clip Size (Max: 6 Rockets)",
+                        "clip_size": "4 Rockets",
+                        "load_time": "1 Rocket per Action",
+                        "notes": ""
+                    }
+                ]
+            },
+            "scatterguns": {
+                "name": "Scatterguns",
+                "weapons": [
+                    {
+                        "name": "Regular Scattergun",
+                        "type_of_damage": "Shell",
+                        "damage_multiplier": 0.4,
+                        "damage_point_blank": 1.26,
+                        "damage_over_100": 0.4,
+                        "active_action_attack": "1 Shell",
+                        "full_turn_attack": "Clip Size (Max: 5 Shells)",
+                        "clip_size": "6 Shells",
+                        "load_time": "2 Shells per Action",
+                        "notes": ""
+                    }
+                ]
+            },
+            "primary_shotguns": {
+                "name": "Primary Shotguns",
+                "weapons": [
+                    {
+                        "name": "Regular Shotgun",
+                        "type_of_damage": "Shell",
+                        "damage_multiplier": 0.6,
+                        "damage_point_blank": 1,
+                        "damage_over_100": 0.6,
+                        "active_action_attack": "1 Shell",
+                        "full_turn_attack": "Clip Size (Max: 5 Shells)",
+                        "clip_size": "6 Shells",
+                        "load_time": "2 Shells per Action",
+                        "notes": ""
+                    }
+                ]
+            },
+            "syringe_guns": {
+                "name": "Syringe Guns",
+                "weapons": [
+                    {
+                        "name": "Regular Syringe Gun",
+                        "type_of_damage": "Barrage",
+                        "damage_multiplier": 1,
+                        "damage_point_blank": 1,
+                        "damage_over_100": 1,
+                        "active_action_attack": "10 Syringes (A Barrage)",
+                        "full_turn_attack": "Clip Size (Max: 30 Syringes)",
+                        "clip_size": "40 Syringes",
+                        "load_time": "40 Syringes per 2 Actions",
+                        "notes": "Must Load Complete Clip before Shoot again"
+                    }
+                ]
+            }
+        },
+        "secondary": {
+            "shotguns": {
+                "name": "Secondary Shotguns",
+                "weapons": [
+                    {
+                        "name": "Regular Shotgun",
+                        "type_of_damage": "Shell",
+                        "damage_multiplier": 0.6,
+                        "damage_point_blank": 1,
+                        "damage_over_100": 0.6,
+                        "active_action_attack": "1 Shell",
+                        "full_turn_attack": "Clip Size (Max: 5 Shells)",
+                        "clip_size": "6 Shells",
+                        "load_time": "2 Shells per Action",
+                        "notes": ""
+                    }
+                ]
+            },
+            "medi_guns": {
+                "name": "Medi guns",
+                "weapons": [
+                    {
+                        "name": "Regular Medi Gun",
+                        "type_of_damage": "Beam (Active Area: 15fts)",
+                        "damage_multiplier": 0,
+                        "damage_point_blank": 0,
+                        "damage_over_100": 0,
+                        "active_action_attack": "72 HP (Healing)",
+                        "full_turn_attack": "72 HP x Amount of Player’s Actions",
+                        "clip_size": "Not Apply",
+                        "load_time": "Not Apply",
+                        "notes": "Ubercharge: </br> Meter Total: 120 </br> Meter Fill Rate: 3 per Active Action (Full turn: 3 x Amount of Player’s Actions) </br> Effect: Invulnerable to Damage (Cannot get damage no matter the attack/defense difference) </br> Duration: 4 turns."
+                    }
+                ]
+            }
+        },
+        "melee": {
+            "bonesaws": {
+                "name": "Bonesaws",
+                "weapons": [
+                    {
+                        "name": "Regular Bonesaw",
+                        "type_of_damage": "Melee",
+                        "damage_multiplier": 0,
+                        "damage_point_blank": 6.5,
+                        "damage_over_100": 6.5,
+                        "active_action_attack": "1 Blow",
+                        "full_turn_attack": "All Player’s Actions",
+                        "clip_size": "Not Apply",
+                        "load_time": "Not Apply",
+                        "notes": ""
+                    },
+                    {
+                        "name": "Amputator",
+                        "type_of_damage": "Melee",
+                        "damage_multiplier": 0,
+                        "damage_point_blank": 6.5,
+                        "damage_over_100": 6.5,
+                        "active_action_attack": "1 Blow",
+                        "full_turn_attack": "All Player’s Actions",
+                        "clip_size": "Not Apply",
+                        "load_time": "Not Apply",
+                        "notes": "Deploy Time (Beam): 1 Turn </br> Active Area: 28 fts radius(10 Squares)"
+                    }
+                ]
+            },
+            "fists": {
+                "name": "Fists",
+                "weapons": [
+                    {
+                        "name": "Fists",
+                        "type_of_damage": "Melee",
+                        "damage_multiplier": 0,
+                        "damage_point_blank": 6.5,
+                        "damage_over_100": 6.5,
+                        "active_action_attack": "1 Blow",
+                        "full_turn_attack": "All Player’s Actions",
+                        "clip_size": "Not Apply",
+                        "load_time": "Not Apply",
+                        "notes": ""
+                    }
+                ]
+            },
+            "shovels": {
+                "name": "Shovels",
+                "weapons": [
+                    {
+                        "name": "Regular Shovel",
+                        "type_of_damage": "Melee",
+                        "damage_multiplier": 0,
+                        "damage_point_blank": 6.5,
+                        "damage_over_100": 6.5,
+                        "active_action_attack": "1 Blow",
+                        "full_turn_attack": "All Player’s Actions",
+                        "clip_size": "Not Apply",
+                        "load_time": "Not Apply",
+                        "notes": ""
+                    }
+                ]
+            }
+        }
+    }
+}

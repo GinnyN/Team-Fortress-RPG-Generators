@@ -1,0 +1,31 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Team Fortress 2 Tabletop RPG</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<p>Name: {{steam.name}}</p>
+			<!--<p>Avatar: <figure><img src="{{avatar}}" /></figure></p>-->
+		</header>
+		<div>
+			<p>
+				<form action="{{SITE_URL}}/characters/{{char.id}}/personal-update/">
+					Name: <input type="text" value="{{char.name}}" name="name"/>
+					Age: <input type="text" value="{{char.age}}" name="age"/>
+					Gender: <input type="text" value="{{char.gender}}" name="gender"/>
+					<input type="submit"/>
+				</form>
+			</p>
+			<p>
+				<form action="{{SITE_URL}}/characters/{{char.id}}/add-levels/">
+					<input type="submit" value="Add Next Level"/>
+				</form>
+			</p>
+			{% if levels %}
+
+			{% endif %}
+		</div>
+	</body>
+</html>

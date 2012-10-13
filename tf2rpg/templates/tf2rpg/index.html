@@ -1,0 +1,41 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Tower of Dimensions</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.0">
+		<link href='http://necolas.github.com/normalize.css/2.0.1/normalize.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Adamina' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+		<link href='{{ STATIC_URL }}/towerofdimensions/css/style.css' rel='stylesheet' type='text/css'>
+		<script>
+			$(document).on("ready", assign);
+
+			function assign()
+			{
+				$("#steam img").on("click", {provider: "http://steamcommunity.com/openid"} ,openid);
+			}
+
+			function openid(ev)
+			{
+				provider = ev.data.provider;
+				$("#openid_identifier").val(provider);
+				$("#fp_openid_login").submit();
+			}
+		</script>
+	</head>
+	<body>
+		{{ warning }}
+		<div id="init">
+			<h1> Team Fortress 2 Tabletop RPG Proyect </h1>
+		<figure id="steam">
+			<img src="http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png" />
+		</figure>
+		</div>
+		<!--<p id="google">Log In with Google</p>-->
+		<form id="fp_openid_login" action="/login/openid/" method="post">
+			 {% csrf_token %}
+        	<input type="hidden" id="openid_identifier" name="openid_identifier" value="" />
+    	</form>
+	</body>
+</html>

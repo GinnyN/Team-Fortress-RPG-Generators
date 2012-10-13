@@ -1,0 +1,135 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Team Fortress 2 Tabletop RPG</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).on("ready",ready);
+
+			function ready()
+			{
+				$(".property input").on("change",bonus);
+				check();
+				$("#random").on("click",rand)
+			}
+			function rand()
+			{
+				$(".property input").each(function(){
+					$(this).val(Math.floor(Math.random()*7)+4);
+				})
+				check();
+			}
+			function check()
+			{
+				$(".property").each(function(){
+					if ($("#"+$(this).attr("id")+" input").val() == "0")
+						$("#"+$(this).attr("id")+"-bonus").html("-40");
+					else if ($("#"+$(this).attr("id")+" input").val() == "1")
+						$("#"+$(this).attr("id")+"-bonus").html("-30");
+					else if ($("#"+$(this).attr("id")+" input").val() == "2")
+						$("#"+$(this).attr("id")+"-bonus").html("-20");
+					else if ($("#"+$(this).attr("id")+" input").val() == "3")
+						$("#"+$(this).attr("id")+"-bonus").html("-10");
+					else if ($("#"+$(this).attr("id")+" input").val() == "4")
+						$("#"+$(this).attr("id")+"-bonus").html("-5");
+					else if ($("#"+$(this).attr("id")+" input").val() == "5")
+						$("#"+$(this).attr("id")+"-bonus").html("0");
+					else if ($("#"+$(this).attr("id")+" input").val() == "6")
+						$("#"+$(this).attr("id")+"-bonus").html("+5");
+					else if ($("#"+$(this).attr("id")+" input").val() == "7")
+						$("#"+$(this).attr("id")+"-bonus").html("+5");
+					else if ($("#"+$(this).attr("id")+" input").val() == "8")
+						$("#"+$(this).attr("id")+"-bonus").html("+10");
+					else if ($("#"+$(this).attr("id")+" input").val() == "9")
+						$("#"+$(this).attr("id")+"-bonus").html("+10");
+					else if ($("#"+$(this).attr("id")+" input").val() == "10")
+						$("#"+$(this).attr("id")+"-bonus").html("+15");
+				})
+			}
+			function bonus()
+			{
+				if ($(this).val() == "0")
+					$("#"+$(this).attr("name")+"-bonus").html("-40");
+				else if ($(this).val() == "1")
+					$("#"+$(this).attr("name")+"-bonus").html("-30");
+				else if ($(this).val() == "2")
+					$("#"+$(this).attr("name")+"-bonus").html("-20");
+				else if ($(this).val() == "3")
+					$("#"+$(this).attr("name")+"-bonus").html("-10");
+				else if ($(this).val() == "4")
+					$("#"+$(this).attr("name")+"-bonus").html("-5");
+				else if ($(this).val() == "5")
+					$("#"+$(this).attr("name")+"-bonus").html("0");
+				else if ($(this).val() == "6" || $(this).val() == "7")
+					$("#"+$(this).attr("name")+"-bonus").html("+5");
+				else if ($(this).val() == "8" || $(this).val() == "9")
+					$("#"+$(this).attr("name")+"-bonus").html("+10");
+				else if ($(this).val() == "10")
+					$("#"+$(this).attr("name")+"-bonus").html("+15");
+				else if ($(this).val() == "11" || $(this).val() == "12" )
+					$("#"+$(this).attr("name")+"-bonus").html("+20");
+				else if ($(this).val() == "13" || $(this).val() == "14")
+					$("#"+$(this).attr("name")+"-bonus").html("+25");
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<p>Name: {{name}}</p>
+			<!--<p>Avatar: <figure><img src="{{avatar}}" /></figure></p>-->
+		</header>
+		<div>
+			
+			<p id="random"> Click Here to Generate Random Rolls </p>
+			<p> Remember you can reorganize the rolls at convenience </p>
+			<p> Tip: If you are going to be Heavy, choose the lowest value for Strength. It's going to be replaced for a 10 next Step </p>
+			<p>
+				<form action="{{SITE_URL}}/characters/{{char.id}}/create/">
+					<table>
+						<tr class="property" id="agility">
+							<td> Agility: </td>
+							<td> <input  type="text" value="0" name="agility"/> </td>
+							<td class="bonus" id="agility-bonus">-40 </td>
+						</tr>
+						<tr class="property" id="constitucion">
+							<td>Constitution:</td>
+							<td><input  type="text" value="0" name="constitucion"/> </td>
+							<td class="bonus" id="constitucion-bonus">-40 </td>
+						</tr>
+						<tr class="property" id="dexterity">
+							<td>Dexterity:</td>
+							<td><input  type="text" value="0" name="dexterity"/> </td>
+							<td class="bonus" id="dexterity-bonus">-40 </td>
+						</tr>
+						<tr class="property" id="strength">
+							<td>Strength:</td>
+							<td><input  type="text" value="0" name="strength"/> </td>
+							<td class="bonus" id="strength-bonus">-40 </td>
+						</tr>
+						<tr class="property" id="inteligence">
+							<td> Inteligence: </td>
+							<td> <input  type="text" value="0" name="inteligence"/> </td>
+							<td class="bonus" id="inteligence-bonus"> -40 </td>
+						</tr>
+						<tr class="property"  id="power">
+							<td>Power:</td>
+							<td><input type="text" value="0" name="power"/> </td>
+							<td class="bonus" id="power-bonus">-40 </td>
+						</tr>
+						<tr class="property"  id="will">
+							<td>Will:</td>
+							<td><input type="text" value="0" name="will"/> </td>
+							<td class="bonus" id="will-bonus">-40 </td>
+						</tr>
+						<tr class="property"  id="perception">
+							<td>Perception:</td>
+							<td><input type="text" value="0" name="perception"/> </td>
+							<td class="bonus" id="perception-bonus">-40 </td>
+						</tr>
+					</table>
+					<input type="submit" value="Go Next Step"/>
+				</form>
+			</p>
+		</div>
+	</body>
+</html>

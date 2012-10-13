@@ -1,0 +1,395 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Team Fortress 2 Tabletop RPG</title>
+		<!-- Stylesheets -->
+		<link href='{{ STATIC_URL }}/jquery-ui/css/cupertino/jquery-ui-1.8.24.custom.css' rel='stylesheet' type='text/css'>
+		<link href='{{ STATIC_URL }}/css/style.css' rel='stylesheet' type='text/css'>
+		<!-- Javascript Files -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="{{ STATIC_URL }}/js/character.js"></script>
+		
+	</head>
+	<body>
+		<header>
+			<p>Name: {{steam.name}}</p>
+			<!--<p>Avatar: <figure><img src="{{avatar}}" /></figure></p>-->
+		</header>
+		<div>
+			<form action="{{SITE_URL}}/characters/{{char.id}}/personal-update/" id="personal-information">
+					{% csrf_token %}
+					Name: <input type="text" value="{{char.name}}" name="name"/>
+					Age: <input type="text" value="{{char.age}}" name="age"/>
+					Gender: <input type="text" value="{{char.gender}}" name="gender"/>
+					<input type="submit"/>
+			</form>
+			<span class="hidden" id="save-url" value="{{SITE_URL}}/characters/{{char.id}}/save/"/></span>
+		</div>
+		<div id="primary-div">
+			<h2>Primary Abilities</h2>
+			<table>
+				<tr>
+					<td></td>
+					<td>Totals</td>
+					<td>Bonus </td>
+					<td></td>
+				</tr>
+				<tr id="agility" class="primary">
+					<td>Agility</td>
+					<td class="totals">{{ level.agility }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-agility">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="constitution" class="primary">
+					<td>Constitution</td>
+					<td class="totals">{{ level.constitucion }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-constitution">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="dexterity" class="primary">
+					<td>Dexterity</td>
+					<td class="totals">{{ level.dexterity }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-dexterity">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="strength" class="primary heavy">
+					<td>Strength</td>
+					<td class="totals">
+						<span class="total"></span>
+						<span class="real hidden">{{ level.strenght }}</span>
+						<span class="hidden heavy">0</span>
+					</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-strength">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="inteligence" class="primary">
+					<td>Intelligence</td>
+					<td class="totals">{{ level.inteligence }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-inteligence">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="power" class="primary">
+					<td>Power</td>
+					<td class="totals">{{ level.power }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-power">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="will" class="primary">
+					<td>Will</td>
+					<td class="totals">{{ level.will }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-will">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+				<tr id="perception" class="primary">
+					<td>Perception</td>
+					<td class="totals">{{ level.perception }}</td>
+					<td class="bonus"></td>
+					<td class="flechas" id="flechas-perception">
+						{% if level.level|divisibleby:2 %}
+						<span class="up ui-icon ui-icon-triangle-1-n"></span><span class="down ui-icon ui-icon-triangle-1-s"></span>
+						{% endif %}
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="secondary-div">
+			<h2>Secondary Abilities</h2>
+			<table>
+				<tr id="movement-type">
+					<td>Movement Type:</td>
+					<td class="value"> </td>
+					<td>Max Movement per Turn:</td>
+					<td class="movement"> </td>
+					<td>Tiredness Points:</td>
+					<td class="tiredness-points"> </td>
+					<td>Turn:</td>
+					<td class="turn">
+						<span class="hidden classBonus">0</span>
+						<span class="value"></span>
+					</td>
+					<td>HP:</td>
+					<td class="hp">
+						<span class="hidden classBonus">0</span>
+						<span class="hidden multipliers">{{ level.hpmultipliers }}</span>
+						<span class="value"></span>
+					</td>
+					<td class="hp">
+						<span class="flechas">
+							<span class="up ui-icon ui-icon-triangle-1-n"></span>
+							<span class="down ui-icon ui-icon-triangle-1-s"></span>
+						</span>
+					</td>
+					<td>Amount of Active Actions:</td>
+					<td class="actions">
+					</td>
+				</tr>
+			</table>
+			<div id="fight-div">
+				<h3> Fighting Abilities </h3>
+				<table>
+					<tr id="fighting-abilities">
+						<td>Attack:</td>
+						<td class="attack">
+							<span class="hidden classBonus">0</span>
+							<span class="hidden base">{{ level.attack }}</span>
+							<span class="value"></span>
+						</td>
+						<td class="attack">
+							<span class="flechas">
+								<span class="up ui-icon ui-icon-triangle-1-n"></span>
+								<span class="down ui-icon ui-icon-triangle-1-s"></span>
+							</span>
+						</td>
+						<td>Defense:</td>
+						<td class="defense">
+							<span class="hidden classBonus">0</span>
+							<span class="hidden base">{{ level.defense }}</span>
+							<span class="value"></span>
+						</td>
+						<td class="defense">
+							<span class="flechas">
+								<span class="up ui-icon ui-icon-triangle-1-n"></span>
+								<span class="down ui-icon ui-icon-triangle-1-s"></span>
+							</span>
+						</td>
+					</tr>
+				</table>
+				<div id="tables-div">
+					<h4>Weapons Tables</h4>
+					<form action="{{ SITE_URL }}/characters/{{ char.id }}/weaponsTablesAdd/" id="weapons-tables">
+						{% csrf_token %}
+						<input type="hidden" value="1" name="level" class="level"/>
+						<select id="tables_list" name="tables_list">
+						</select>
+						<input type="submit" value="add"/>
+					</form>
+					<span class="hidden" id="remove-table-url" value="{{ SITE_URL }}/characters/{{ char.id }}/weaponsTablesRemove/" type="hidden"></span>
+					<div id="table-collection">
+						{% for table in tables %}
+						<div class='{{ table.type }} {{ table.slot }}'>{{ table.name }}<span class='close ui-icon ui-icon-close'></span></div>
+						{% endfor %}
+					</div>
+				</div>
+				<div id="weapons-div">
+					<input type="hidden" id="url-json" value="{{ SITE_URL }}/characters/weaponInfo/"/>
+					<input type="hidden" id="url-json-tables" value="{{ SITE_URL }}/characters/weaponTables/"/>
+					<div class="weapons slot-1">
+						<p>
+							Primary Slot:
+							<select name="weapon-primary" class="weapon-primary weapon">
+							</select>
+							<table>
+								<tr>
+									<td></td>
+									<td>Normal</td>
+									<td>Crits</td>
+									<td>Mini-Crits</td>
+								</tr>
+								<tr class="normal">
+									<td>Damage Multiplier:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="point-blank">
+									<td>At Point Blank Shot:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="over-100">
+									<td>At a result of over 100:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td>Active Action Attack:</td>
+									<td class="active-action-attack"></td>
+								</tr>
+								<tr>
+									<td>Clip Size:</td>
+									<td class="clip-size"></td>
+								</tr>
+								<tr>
+									<td>Full Turn Attack:</td>
+									<td class="full-turn-attack"></td>
+								</tr>
+								<tr>
+									<td>Load Time:</td>
+									<td class="load-time"></td>
+								</tr>
+							</table>
+							<p class="notes"></p>
+						</p> 
+					</div>
+					<div class="weapons slot-2">
+						<p>
+							Secondary Slot:
+							<select name="weapon-secondary" class="weapon-secondary weapon">
+							</select>
+							<table>
+								<tr>
+									<td></td>
+									<td>Normal</td>
+									<td>Crits</td>
+									<td>Mini-Crits</td>
+								</tr>
+								<tr class="normal">
+									<td>Damage Multiplier:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="point-blank">
+									<td>At Point Blank Shot:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="over-100">
+									<td>At a result of over 100:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td>Active Action Attack:</td>
+									<td class="active-action-attack"></td>
+								</tr>
+								<tr>
+									<td>Clip Size:</td>
+									<td class="clip-size"></td>
+								</tr>
+								<tr>
+									<td>Full Turn Attack:</td>
+									<td class="full-turn-attack"></td>
+								</tr>
+								<tr>
+									<td>Load Time:</td>
+									<td class="load-time"></td>
+								</tr>
+							</table>
+							<p class="notes"></p>
+						</p> 
+						</p> 
+					</div>
+					<div class="weapons slot-3">
+						<p>
+							Melee Slot:
+							<select name="weapon-melee" class="weapon-melee weapon">
+							</select>
+							<table>
+								<tr>
+									<td></td>
+									<td>Normal</td>
+									<td>Crits</td>
+									<td>Mini-Crits</td>
+								</tr>
+								<tr class="normal">
+									<td>Damage Multiplier:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="point-blank">
+									<td>At Point Blank Shot:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+								<tr class="over-100">
+									<td>At a result of over 100:</td>
+									<td class="normal"></td>
+									<td class="crits"></td>
+									<td class="mini-crits"></td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td>Active Action Attack:</td>
+									<td class="active-action-attack"></td>
+								</tr>
+								<tr>
+									<td>Clip Size:</td>
+									<td class="clip-size"></td>
+								</tr>
+								<tr>
+									<td>Full Turn Attack:</td>
+									<td class="full-turn-attack"></td>
+								</tr>
+								<tr>
+									<td>Load Time:</td>
+									<td class="load-time"></td>
+								</tr>
+							</table>
+							<p class="notes"></p>
+						</p> 
+						</p> 
+					</div>
+				</div>
+			</div>
+			<div id="misc-div">
+				<h3> Misc Abilities </h3>
+				<span class="hidden" id="misc-url" value="{{ SITE_URL }}/characters/{{ char.id }}/misc/" type="hidden"></span>
+				<table id="misc-list">
+				</table>
+			</div>
+		</div>
+		<div id="levels-div">
+			<p id="save">Click here to Save</p>
+			<div><span id="points">{{ level.pointLeft }}</span>
+			<span id="pointsTotal">/{{ level.points }}</span></div>
+			<form action="{{SITE_URL}}/characters/{{char.id}}/level_update/" class="level-form" id="level-1">
+				{% csrf_token %}
+				1st Level
+				<input type="hidden" value="1" name="level" class="level"/>
+				<input type="hidden" value="{{ SITE_URL }}/characters/classInfo/" name="json-url" class="json-url"/>
+				<select name="class" class="class">
+					<option {% if level.playerClass == "scout" %} selected {% endif %} value="scout">Scout</option>
+					<option {% if level.playerClass == "soldier" %} selected {% endif %}value="soldier">Soldier</option>
+					<option {% if level.playerClass == "pyro" %} selected {% endif %}value="pyro">Pyro</option>
+					<option {% if level.playerClass == "demoman" %} selected {% endif %}value="demoman">Demoman</option>
+					<option {% if level.playerClass == "heavy" %} selected {% endif %}value="heavy">Heavy</option>
+					<option {% if level.playerClass == "engineer" %} selected {% endif %}value="engineer">Engineer</option>
+					<option {% if level.playerClass == "medic" %} selected {% endif %}value="medic">Medic</option>
+					<option {% if level.playerClass == "sniper" %} selected {% endif %}value="sniper">Sniper</option>
+					<option {% if level.playerClass == "spy" %} selected {% endif %}value="spy">Spy</option>
+				</select>
+				<input type="submit" value="change"/>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,214 @@
+{
+    "tables": {
+        "Scout Basic Table": {
+            "name": "Scout Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Scattergun"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Pistol"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Bat"
+                }
+            ]
+        },
+        "Soldier Basic Table": {
+            "name": "Soldier Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Rocket Launcher/Original"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Shotgun"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Shovel"
+                }
+            ]
+        },
+        "Pyro Basic Table": {
+            "name": "Pyro Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Flamethrower/Rainblower"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Shotgun"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Fire Axe"
+                }
+            ]
+        },
+        "Demoman Basic Table": {
+            "name": "Demoman Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Granade Launcher"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Sticky Launcher"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Bottle"
+                }
+            ]
+        },
+        "Heavy Basic Table": {
+            "name": "Heavy Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Sasha/Iron Curtain"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Shotgun"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Fists"
+                }
+            ]
+        },
+        "Engineer Basic Table": {
+            "name": "Engineer Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Shotgun"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Pistol"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Wrench"
+                }
+            ]
+        },
+        "Medic Basic Table": {
+            "name": "Medic Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Syringe Gun"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular Medi Gun"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Bonesaw"
+                }
+            ]
+        },
+        "Sniper Basic Table": {
+            "name": "Sniper Basic Table",
+            "cost": 20,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Sniper Rifle"
+                }
+            ],
+            "secondary":[
+                {
+                    "name" : "Regular SMG"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Kukri"
+                }
+            ]
+        },
+        "Spy Basic Table": {
+            "name": "Spy Basic Table",
+            "cost": 30,
+            "class": "table",
+            "primary": [
+                {
+                    "name" : "Regular Revolver/Big Kill"
+                }
+            ],
+            "secondary": [
+                {
+                    "name" : "Invisi Watch/Enthusiast’s Timepiece"
+                }
+            ],
+            "melee":[
+                {
+                    "name" : "Regular Knife"
+                }
+            ]
+        },
+        "Double Jump":{
+            "name": "Double Jump",
+            "cost": 50,
+            "class": "technique"
+        },
+        "Rocket Jump":{
+            "name": "Rocket Jump",
+            "cost": 50,
+            "class": "technique"
+        },
+        "Sticky Jump":{
+            "name": "Sticky Jump",
+            "cost": 50,
+            "class": "technique"
+        },
+        "Regeneration":{
+            "name": "Regeneration",
+            "cost": 50,
+            "class": "technique"
+        },
+        "Upgrade":{
+            "name": "Upgrade",
+            "cost": 50,
+            "class": "technique"
+        },
+        "Ability to produce Jarate":{
+            "name": "Ability to produce Jarate",
+            "cost": 50,
+            "class": "technique"
+        }
+    }
+}
